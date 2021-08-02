@@ -34,7 +34,7 @@ function escribirDirectorio(rutadestinodirec,rutafile,rutadestinofile,leerArchiv
     })
 }
 
-function leerArchivo(ruta,rutadestino,escribirArchivocb){
+function copiarArchivo(ruta,rutadestino,escribirArchivocb){
     fs.readFile(ruta, 'utf-8',(err,data)=>{
         escribirArchivocb(rutadestino,data)
     })
@@ -49,4 +49,4 @@ function escribirArchivo (rutadestino,contenido){
     } )
 }
 LeerDirectorio('../PRUEBA_ASYNC' )
-escribirDirectorio('../copia','./callback.js','./callback2.js',leerArchivo,escribirArchivo)
+escribirDirectorio('../copia','./callback.js','./callback2.js',copiarArchivo,escribirArchivo)
